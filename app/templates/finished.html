@@ -1,0 +1,21 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% import "bootstrap/fixes.html" as fixes %}
+
+{% block content %}
+<div class="container">
+
+<h1>Our Changing World </h1>
+<h3>Peer-marks for group work</h3><br>
+
+Thank you for submitting your evaluations.
+<br><br>
+Please close this tab on your browser to fully log out of the system.
+
+</div>
+{% endblock %}
+
+{% block head %}
+{{super()}}
+{{fixes.ie8()}}
+{% endblock %}

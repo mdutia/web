@@ -1,0 +1,36 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% import "bootstrap/fixes.html" as fixes %}
+
+{% block content %}
+<div class="container">
+
+<h1>Our Changing World </h1>
+<h3>Peer-marks for group work</h3><br>
+{% if error %}
+  <p class=error><strong>Error:</strong> {{ error }}
+{% endif %}
+
+<form action="" method="post" name="login">
+    {{form.hidden_tag()}}
+    <p>
+        Please enter your username:<br>
+        {{form.uname(size=60)}}<br>
+        {% for error in form.errors.uname %}
+        <span style="color: red;">[{{error}}]</span>
+        {% endfor %}<br>
+        Please enter your OCW password:<br>
+        {{form.pwd(size=60)}}<br>
+        {% for error in form.errors.pwd %}
+        <span style="color: red;">[{{error}}]</span>
+        {% endfor %}<br>
+    </p>
+    <p><input type="submit" value="Sign In" class="btn btn-success" ></p>
+</form>
+</div>
+{% endblock %}
+
+{% block head %}
+{{super()}}
+{{fixes.ie8()}}
+{% endblock %}

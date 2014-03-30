@@ -1,0 +1,12 @@
+mdutia,letmein,Mayank,Dutia,s001,1
+awroe,letmein,Allison,Wroe,s002,1
+pflatm1,letmein,Peter,Flatman,s003,1
+celine,letmein,Celine,Caquineau,s009,1
+lauren,letmein,Lauren,Sandford,s010,1
+
+markhay,letmein,Mark,Hay,s011,2
+bgates,vip001,Bill,Gates,s004,2
+aeinstein,vip002,Albert,Einstein,s005,2
+nbohr,vip003,Niels,Bohr,s006,2
+missp,vip004,Miss,Piggy,s007,2
+kermit,vip005,Kermit,Frog,s008,2

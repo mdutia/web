@@ -1,0 +1,35 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% import "bootstrap/fixes.html" as fixes %}
+
+{% block content %}
+<div class="container">
+
+<h1>Our Changing World </h1>
+<h3>Peer-marks for group work</h3><br>
+<h4>For each of the members of your group, enter your marks and comments:</h4><br>
+<form action="" method="post" name="index">
+    {{form.hidden_tag()}}
+    <p>
+        {{form.selected}}<br>
+        {% for error in form.errors.selected %}
+        <span style="color: red;">[{{error}}]</span>
+        {% endfor %}
+    </p><br>
+    <div class="form-group">
+      <div class="col-md-6">
+      <input type="submit" value=" Select " class="btn btn-success" name="Button">
+      <br><br>
+      <input type="submit" value=" Save and continue " class="btn btn-primary" name="Button">
+      <input type="submit" value=" Submit and exit " class="btn btn-warning" name="Button">
+      </div>
+    </div>
+</form>
+  
+</div>
+{% endblock %}
+
+{% block head %}
+{{super()}}
+{{fixes.ie8()}}
+{% endblock %}
