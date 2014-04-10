@@ -8,9 +8,6 @@ class LoginForm(Form):
     #remember_me = BooleanField('remember_me', default = False)
     
 class SelectGroupMemberForm (Form):
-    #choicelist=[]
-    #for i in range (1,n):
-        #choicelist.append ( (str(n), '1') ) 
     selected= RadioField('Group members', choices= [
         ('1','     '),
         ('2','     '),

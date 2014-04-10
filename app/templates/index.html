@@ -6,28 +6,55 @@
 <div class="container">
 
 <h1>Our Changing World </h1>
-<h3>Peer-marks for group work</h3><br>
-<h4>For each of the members of your group, enter your marks and comments:</h4><br>
+<h3>Peer-marks for group work</h3>
+<br>
 <form action="" method="post" name="index">
     {{form.hidden_tag()}}
-    <p>
-        {{form.selected}}<br>
+    <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title"><strong>Enter your marks for each student in your group :</strong></h3>
+    </div>
+      <div class="panel-body">
+        {% for subfield in form.selected %}
+        <tr>
+            {% if statuslist[loop.index0]=='Completed'%}
+            <td><span class="glyphicon glyphicon-ok" style="color: orange;"></span></td>
+            {%endif%}
+            {% if statuslist[loop.index0]!='Completed'%}
+            <td><span class="glyphicon glyphicon-pencil" style="color: blue;"></span></td>
+            {%endif%}           
+            <td>{{ subfield }}</td>
+            <td>{{ subfield.label }}</td>
+        </tr>
+        <br>
+        {% endfor %}
+        <br>
         {% for error in form.errors.selected %}
         <span style="color: red;">[{{error}}]</span>
         {% endfor %}
-    </p><br>
-    <div class="form-group">
-      <div class="col-md-6">
-      <input type="submit" value=" Select " class="btn btn-success" name="Button">
-      <br><br>
-      <input type="submit" value=" Save and continue " class="btn btn-primary" name="Button">
-      <input type="submit" value=" Submit and exit " class="btn btn-warning" name="Button">
+        <div class="row">
+        <div class="col-md-3">      
+        <input type="submit" value=" Select " class="btn btn-success" name="Button">
+        </div>
+        </div>
       </div>
     </div>
+    <p><br>
+       {%if donevar!='Done'%}
+        <div class="col-md-3 col-offset-2">      
+        <input type="submit" value=" Save and continue later" class="btn btn-primary" name="Button">
+        </div>
+        {%else%}
+         <strong>All done: You may upload your marks and finish. To revise and re-confirm before uploading, continue selecting from the list above.</strong>
+        <div class="col-md-3 col-offset-4"> 
+        <input type="submit" value=" Upload and exit " class="btn btn-danger" name="Button">
+        </div>
+        {%endif%}
+    </p>
 </form>
   
 </div>
-{% endblock %}
+{% endblock  %}
 
 {% block head %}
 {{super()}}
