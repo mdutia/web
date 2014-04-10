@@ -5,40 +5,42 @@
 {% block content %}
 <div class="container">
   <h1>Our Changing World</h1>
-  <h3>Enter marks and comments for {{selecteduser}} : </h3>
+  <h3> {{selecteduser}} : </h3>
   <br>
   <form action="" method="post" name="evaluation">
     {{form.hidden_tag()}}
     <p>
-        {{criteria[0]}}:
+        <strong>{{criteria[0]}}:</strong>
         {{form.m1 (size=2)}} <br>
         {% for error in form.errors.m1 %}
         <span style="color: red;">[{{error}}]</span>
         {% endfor %}<br><br>
-        {{criteria[1]}}:
+        <strong>{{criteria[1]}}:</strong>
         {{form.m2 (size=2)}} <br>
         {% for error in form.errors.m2 %}
         <span style="color: red;">[{{error}}]</span>
         {% endfor %}<br><br>
-        {{criteria[2]}}:
+        <strong>{{criteria[2]}}:</strong>
         {{form.m3 (size=2)}} <br>
         {% for error in form.errors.m3 %}
         <span style="color: red;">[{{error}}]</span>
         {% endfor %}<br><br>
-        {{criteria[3]}}:
+        <strong>{{criteria[3]}}:</strong>
         {{form.m4 (size=2)}} <br>
         {% for error in form.errors.m4 %}
         <span style="color: red;">[{{error}}]</span>
         {% endfor %}<br><br>
-        {{criteria[4]}}:
+        <strong>{{criteria[4]}}:</strong>
         {{form.m5 (size=2)}} <br>
         {% for error in form.errors.m5 %}
         <span style="color: red;">[{{error}}]</span>
         {% endfor %}<br><br>
-        Comment:<br>
-        {{form.j1(rows= '4', cols='70')}}<br>
+        <strong>Comment:</strong>
+        <br>
+        {{form.j1(rows= '3', cols='70')}}<br>
     </p>
-    <p><input type="submit" value="Save" class="btn btn-success" ></p>
+    <p><input type="submit" value="Save" class="btn btn-success" name='Button'></p>
+    <p><input type="submit" value="Cancel" class="btn btn-danger" name='Button'></p>
 </form>
 
 </div>

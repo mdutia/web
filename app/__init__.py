@@ -60,6 +60,7 @@ class Evaluation(db.Model):
     m4= db.Column (db.Integer)
     m5= db.Column (db.Integer)
     j1= db.Column (db.String (255))
+
     
     def __init__(self, markee, marker, m1,m2,m3,m4,m5,j1):
         self.markee_matric=markee
@@ -70,6 +71,7 @@ class Evaluation(db.Model):
         self.m4=m4
         self.m5=m5
         self.j1=j1
+
 
     def get_id(self):
         return unicode(self.id)
